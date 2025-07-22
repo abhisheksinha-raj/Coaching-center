@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Edugene - The Most Complete Education Solution</title>
+
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.min.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+
+  <link rel="shortcut icon" href="images/favicon.png" />
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/linearicons-free.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="vendor/flexslider/flexslider.css">
+  <link rel="stylesheet" href="vendor/owlcarousel/owl.carousel.css">
+  <link rel="stylesheet" href="vendor/fancybox/css/fancybox.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/kindergarten.css">
+</head>
+
+<body>
+  <div class="header_meta header_meta_one">
+    <div class="container">
+      <div class="row">
+        <ul class="social"></ul>
+        <nav class="meta-login">
+          <ul>
+            <li class="clock"><i class="lnr lnr-clock"></i>TimeTable</li>
+            <li class="call"><i class="lnr lnr-smartphone"></i>Call Us 7011433893</li>
+            <li><a href="signup.html" class="fancybox">Signin/Signup</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header home-one" id="masthead">
+    <div class="container">
+      <div class="row">
+        <div class="site-branding col-xs-12 col-sm-3">
+          <a href="home-1.html"><img alt="edugene" class="brand" src="images/edugene 1.0.1.png" /></a>
+        </div>
+        <nav class="main-navigation navbar navbar-default" id="site-navigation">
+          <div class="navbar-header">
+            <button data-target=".navbar-ex1-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+              <li class="dropdown active">
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                  aria-expanded="false" href="home-1.html">
+                  Home
+                </a>
+              </li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                  aria-expanded="false" href="#">
+                  Courses <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="class 9-10 and 11.html" target="_blank">Classes 1-9 and 11</a></li>
+                  <li><a href="class 10.html" target="_blank">Classes 10</a></li>
+                  <li><a href="class 12.html">Class 12</a></li>
+                </ul>
+              </li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                  aria-expanded="false" href="#">
+                  Our Teachers <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="Teacher Details.html">Know About Our Teachers</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <div id="flex" class="flexslider kindergarten">
+    <ul class="slides">
+      <li style="background:url(images/image.png) no-repeat center; background-size:cover;">
+        <div class="container">
+          <div class="row">
+            <div class="slide-caption"></div>
+          </div>
+      </li>
+      <li style="background:url(images/pro.jpg) no-repeat center; background-size:cover;">
+        <div class="container">
+          <div class="row">
+            <div class="slide-caption"></div>
+          </div>
+      </li>
+    </ul>
+  </div>
+
+  <section class="about-with-slide">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 aboutus">
+          <div class="row">
+            <div class="col-xs-12 col-sm-7">
+              <h3><span>About</span> #1 Edugene</h3>
+              <p>Edugene is a web platform that enables teachers to share educational content like notes and assignments
+                while allowing students to access resources. With a clean and user-friendly interface, the platform
+                supports role-based access and cloud storage, making digital learning more efficient and accessible.</p>
+            </div>
+            <div class="col-xs-12 col-sm-5">
+              <div class="flexslider about-slide">
+                <ul class="slides"></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- File Upload Section -->
+  <section class="upload-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h3><span>Upload</span> Course Materials</h3>
+          <input type="file" id="fileInput">
+          <button onclick="uploadFile()" class="btn">Upload</button>
+          <div id="fileList"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fun-gallery">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h3><span></span> Gallery</h3>
+          <div class="flexslider fun-gallery-slider">
+            <ul class="slides">
+              <li>
+                <div class="col-xs-12 col-sm-6">
+                  <div class="row">
+                    <img src="images/pro.jpg" alt="" />
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 slide-right">
+                  <div class="col-sm-6">
+                    <img src="images/WhatsApp Image 2025-03-22 at 19.49.20_ba181a47.jpg" alt="" />
+                    <img src="images/WhatsApp Image 2025-03-22 at 19.53.16_c01623d2.jpg" alt="" />
+                  </div>
+                  <div class="col-sm-6">
+                    <img src="images/WhatsApp Image 2025-03-22 at 19.53.41_ce6ecb1f.jpg" alt="" />
+                    <img src="images/WhatsApp Image 2025-03-22 at 19.53.41_d937765f.jpg" alt="" />
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer" id="colophon">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-4"><img src="images/logo5.png" alt="" /></div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-4 footer-widget">
+          <aside class="widget widget_text">
+            <div class="textwidget">
+              © 2024 EduGene. All rights reserved.
+            </div>
+          </aside>
+        </div>
+        <div class="col-xs-12 col-sm-4 footer-widget">
+          <aside class="widget widget_nav_menu">
+            <ul class="menu">
+              <li><a href="home-1.html">Home</a></li>
+              <li><a href="Teacher Details.html">Teachers</a></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="vendor/flexslider/jquery.flexslider-min.js"></script>
+  <script src="vendor/owlcarousel/owl.carousel.js"></script>
+  <script src="vendor/fancybox/js/jquery.fancybox.js"></script>
+  <script src="vendor/fancybox/js/custom.fancybox.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script src="js/theme.js"></script>
+  <script>
+    jQuery.noConflict();
+    jQuery(document).ready(function ($) {
+      var owl = $("#owl-classes");
+      owl.owlCarousel({
+        items: 3,
+        itemsDesktop: [1000, 3],
+        itemsDesktopSmall: [900, 3],
+        itemsTablet: [640, 2],
+        itemsMobile: [480, 1],
+        navigation: false,
+        pagination: true,
+        autoPlay: true
+      });
+
+      var owl = $("#owl-teachers");
+      owl.owlCarousel({
+        items: 2,
+        itemsDesktop: [1000, 2],
+        itemsDesktopSmall: [900, 2],
+        itemsTablet: [600, 1],
+        itemsMobile: [480, 1],
+        navigation: false,
+        pagination: true,
+        autoPlay: true
+      });
+
+      $('.fancybox').fancybox();
+      new WOW().init();
+    });
+
+    async function uploadFile() {
+      const fileInput = document.getElementById('fileInput');
+      if (!fileInput.files[0]) {
+        alert('Please select a file.');
+        return;
+      }
+      const formData = new FormData();
+      formData.append('file', fileInput.files[0]);
+      try {
+        const response = await fetch('http://localhost:5000/api/upload', {
+          method: 'POST',
+          body: formData,
+        });
+        const data = await response.json();
+        alert(data.message);
+        if (response.ok) {
+          fetchFiles();
+        }
+      } catch (err) {
+        console.error('Upload error:', err);
+        alert('Upload failed: ' + (data?.message || err.message || 'Server not responding. Ensure backend is running on port 5000.'));
+      }
+    }
+
+    async function fetchFiles() {
+      try {
+        const response = await fetch('http://localhost:5000/api/files');
+        const files = await response.json();
+        document.getElementById('fileList').innerHTML = files.map(f => `<p><a href="/Uploads/${f.filename}" target="_blank">${f.filename}</a></p>`).join('');
+      } catch (err) {
+        console.error('Fetch files error:', err);
+      }
+    }
+
+    fetchFiles();
+  </script>
+</body>
+
+</html>
