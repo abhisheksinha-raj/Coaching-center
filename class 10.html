@@ -1,0 +1,139 @@
+<html>
+<head>
+    <title>Class 10 Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script>
+        function showSection(sectionId, button) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            document.getElementById(sectionId).classList.remove('hidden');
+
+            document.querySelectorAll('.nav-button').forEach(btn => {
+                btn.classList.remove('bg-gradient-to-r', 'from-purple-500', 'to-blue-500', 'text-white');
+                btn.classList.add('bg-white', 'text-gray-600');
+            });
+            button.classList.add('bg-gradient-to-r', 'from-purple-500', 'to-blue-500', 'text-white');
+            button.classList.remove('bg-white', 'text-gray-600');
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <div class="container mx-auto p-4">
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-semibold text-blue-600">Class 10</h1>
+            <p class="text-gray-500">Your journey to excellence begins here</p>
+        </div>
+        <div class="flex justify-center space-x-4 mb-8">
+            <button onclick="showSection('assignments', this)" class="nav-button px-4 py-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg shadow-md">Assignments</button>
+            <button onclick="showSection('notes', this)" class="nav-button px-4 py-2 bg-white text-gray-600 rounded-lg shadow-md">Notes</button>
+            <button onclick="showSection('results', this)" class="nav-button px-4 py-2 bg-white text-gray-600 rounded-lg shadow-md">Results</button>
+            <button onclick="showSection('board-special', this)" class="nav-button px-4 py-2 bg-white text-gray-600 rounded-lg shadow-md">Board special</button>
+        </div>
+        <div id="assignments" class="section bg-white rounded-lg shadow-md p-6">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-2xl font-semibold text-blue-600"><i class="fas fa-calendar-alt"></i> Assignments</h2>
+                <div class="relative">
+                    <input type="text" class="pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Search assignments...">
+                    <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                </div>
+            </div>
+            <div class="space-y-4">
+                <div class="highlight-box bg-gradient-to-r from-purple-100 to-blue-100 p-4 rounded-lg shadow-md flex justify-between items-center border-2 hover:shadow-lg hover:border-blue-500 cursor-pointer">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-700">Mathematics Chapter 5 Exercise</h3>
+                        <p class="text-gray-500"><i class="fas fa-clock"></i> Due: 2024-03-25</p>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-gray-500">75% Complete</span>
+                        <i class="fas fa-chevron-right text-gray-400"></i>
+                    </div>
+                </div>
+                <div class="highlight-box bg-gradient-to-r from-purple-100 to-blue-100 p-4 rounded-lg shadow-md flex justify-between items-center border-2 hover:shadow-lg hover:border-blue-500 cursor-pointer">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-700">English Essay</h3>
+                        <p class="text-gray-500"><i class="fas fa-clock"></i> Due: 2024-03-30</p>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-gray-500">50% Complete</span>
+                        <i class="fas fa-chevron-right text-gray-400"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="notes" class="section bg-white rounded-lg shadow-md p-6 hidden">
+            <h2 class="text-2xl font-semibold text-blue-600 mb-4">Notes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="highlight-box bg-gradient-to-r from-purple-100 to-blue-100 p-4 rounded-lg shadow-md flex items-center justify-between border-2 hover:shadow-lg hover:border-blue-500 cursor-pointer">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-700">Mathematics Notes</h3>
+                        <p class="text-gray-500">Topics uploaded: 10</p>
+                    </div>
+                    <button class="bg-blue-500 text-white px-2 py-1 rounded-lg text-sm">Show Notes</button>
+                </div>
+                <div class="highlight-box bg-gradient-to-r from-purple-100 to-blue-100 p-4 rounded-lg shadow-md flex items-center justify-between border-2 hover:shadow-lg hover:border-blue-500 cursor-pointer">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-700">Science Notes</h3>
+                        <p class="text-gray-500">Topics uploaded: 8</p>
+                    </div>
+                    <button class="bg-blue-500 text-white px-2 py-1 rounded-lg text-sm">Show Notes</button>
+                </div>
+                <div class="highlight-box bg-gradient-to-r from-purple-100 to-blue-100 p-4 rounded-lg shadow-md flex items-center justify-between border-2 hover:shadow-lg hover:border-blue-500 cursor-pointer">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-700">English Notes</h3>
+                        <p class="text-gray-500">Topics uploaded: 12</p>
+                    </div>
+                    <button class="bg-blue-500 text-white px-2 py-1 rounded-lg text-sm">Show Notes</button>
+                </div>
+                <div class="highlight-box bg-gradient-to-r from-purple-100 to-blue-100 p-4 rounded-lg shadow-md flex items-center justify-between border-2 hover:shadow-lg hover:border-blue-500 cursor-pointer">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-700">Social Studies Notes</h3>
+                        <p class="text-gray-500">Topics uploaded: 9</p>
+                    </div>
+                    <button class="bg-blue-500 text-white px-2 py-1 rounded-lg text-sm">Show Notes</button>
+                </div>
+            </div>
+        </div>
+        <div id="results" class="section bg-white rounded-lg shadow-md p-6 hidden">
+            <h2 class="text-2xl font-semibold text-blue-600 mb-4">Results</h2>
+            <div class="space-y-4">
+                <div class="highlight-box bg-gradient-to-r from-purple-100 to-blue-100 p-4 rounded-lg shadow-md border-2 hover:shadow-lg hover:border-blue-500 cursor-pointer">
+                    <h3 class="text-lg font-semibold text-gray-700">Mathematics</h3>
+                    <p class="text-gray-500">Score: 95/100</p>
+                </div>
+                <div class="highlight-box bg-gradient-to-r from-purple-100 to-blue-100 p-4 rounded-lg shadow-md border-2 hover:shadow-lg hover:border-blue-500 cursor-pointer">
+                    <h3 class="text-lg font-semibold text-gray-700">Science</h3>
+                    <p class="text-gray-500">Score: 88/100</p>
+                </div>
+            </div>
+        </div>
+        <div id="board-special" class="section bg-white rounded-lg shadow-md p-6 hidden">
+            <h2 class="text-2xl font-semibold text-blue-600 mb-4">Board Special</h2>
+            <div class="flex justify-between items-center space-x-2">
+                <div class="highlight-box bg-gradient-to-r from-purple-100 to-blue-100 p-6 rounded-lg shadow-md flex items-center space-x-4 border-2 hover:shadow-lg hover:border-blue-500 cursor-pointer w-1/3">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-700">Previous Year Papers</h3>
+                        <p class="text-gray-500">Downloads: 1200</p>
+                    </div>
+                    <i class="fas fa-download text-gray-400"></i>
+                </div>
+                <div class="highlight-box bg-gradient-to-r from-purple-100 to-blue-100 p-6 rounded-lg shadow-md flex items-center space-x-4 border-2 hover:shadow-lg hover:border-blue-500 cursor-pointer w-1/3">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-700">Important Questions</h3>
+                        <p class="text-gray-500">Downloads: 950</p>
+                    </div>
+                    <i class="fas fa-download text-gray-400"></i>
+                </div>
+                <div class="highlight-box bg-gradient-to-r from-purple-100 to-blue-100 p-6 rounded-lg shadow-md flex items-center space-x-4 border-2 hover:shadow-lg hover:border-blue-500 cursor-pointer w-1/3">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-700">Exam Preparation Guide</h3>
+                        <p class="text-gray-500">Downloads: 1100</p>
+                    </div>
+                    <i class="fas fa-download text-gray-400"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

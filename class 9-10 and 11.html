@@ -1,0 +1,258 @@
+<html>
+<head>
+    <title>Course Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .highlight:hover {
+            background-color: #e0e0e0;
+            transform: scale(1.02);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        .highlight:active {
+            background-color: #d0d0d0;
+            transform: scale(0.98);
+            transition: transform 0.1s, background-color 0.1s;
+        }
+    </style>
+    <script>
+        function updateClass() {
+            const selectedClass = document.getElementById('classSelect').value;
+            document.getElementById('classTitle').innerText = `Assignments for ${selectedClass}`;
+            
+            const assignments = {
+                "Class 1": [
+                    { title: "Basic Addition Worksheet", subject: "Mathematics", due: "3/26/2024", status: "submitted" },
+                    { title: "English Reading Assignment", subject: "English", due: "3/27/2024", status: "pending" }
+                ],
+                "Class 2": [
+                    { title: "Science Project", subject: "Science", due: "3/28/2024", status: "submitted" },
+                    { title: "History Essay", subject: "History", due: "3/29/2024", status: "pending" }
+                ],
+                "Class 3": [
+                    { title: "Geography Quiz", subject: "Geography", due: "3/30/2024", status: "submitted" },
+                    { title: "Math Homework", subject: "Mathematics", due: "3/31/2024", status: "pending" }
+                ],
+                "Class 4": [
+                    { title: "Physics Lab Report", subject: "Physics", due: "4/1/2024", status: "submitted" },
+                    { title: "Chemistry Assignment", subject: "Chemistry", due: "4/2/2024", status: "pending" }
+                ],
+                "Class 5": [
+                    { title: "Biology Project", subject: "Biology", due: "4/3/2024", status: "submitted" },
+                    { title: "Literature Essay", subject: "Literature", due: "4/4/2024", status: "pending" }
+                ],
+                "Class 6": [
+                    { title: "Algebra Homework", subject: "Mathematics", due: "4/5/2024", status: "submitted" },
+                    { title: "World History Assignment", subject: "History", due: "4/6/2024", status: "pending" }
+                ],
+                "Class 7": [
+                    { title: "Chemistry Lab Report", subject: "Chemistry", due: "4/7/2024", status: "submitted" },
+                    { title: "Physics Quiz", subject: "Physics", due: "4/8/2024", status: "pending" }
+                ],
+                "Class 8": [
+                    { title: "Geometry Homework", subject: "Mathematics", due: "4/9/2024", status: "submitted" },
+                    { title: "English Literature Essay", subject: "English", due: "4/10/2024", status: "pending" }
+                ],
+                "Class 9": [
+                    { title: "Biology Lab Report", subject: "Biology", due: "4/11/2024", status: "submitted" },
+                    { title: "Geography Assignment", subject: "Geography", due: "4/12/2024", status: "pending" }
+                ],
+                "Class 11": [
+                    { title: "Calculus Homework", subject: "Mathematics", due: "4/13/2024", status: "submitted" },
+                    { title: "Physics Assignment", subject: "Physics", due: "4/14/2024", status: "pending" }
+                ]
+            };
+
+            const notes = {
+                "Class 1": [
+                    { title: "Note 1", content: "This is a note for Class 1." },
+                    { title: "Note 2", content: "This is another note for Class 1." }
+                ],
+                "Class 2": [
+                    { title: "Note 1", content: "This is a note for Class 2." },
+                    { title: "Note 2", content: "This is another note for Class 2." }
+                ],
+                "Class 3": [
+                    { title: "Note 1", content: "This is a note for Class 3." },
+                    { title: "Note 2", content: "This is another note for Class 3." }
+                ],
+                "Class 4": [
+                    { title: "Note 1", content: "This is a note for Class 4." },
+                    { title: "Note 2", content: "This is another note for Class 4." }
+                ],
+                "Class 5": [
+                    { title: "Note 1", content: "This is a note for Class 5." },
+                    { title: "Note 2", content: "This is another note for Class 5." }
+                ],
+                "Class 6": [
+                    { title: "Note 1", content: "This is a note for Class 6." },
+                    { title: "Note 2", content: "This is another note for Class 6." }
+                ],
+                "Class 7": [
+                    { title: "Note 1", content: "This is a note for Class 7." },
+                    { title: "Note 2", content: "This is another note for Class 7." }
+                ],
+                "Class 8": [
+                    { title: "Note 1", content: "This is a note for Class 8." },
+                    { title: "Note 2", content: "This is another note for Class 8." }
+                ],
+                "Class 9": [
+                    { title: "Note 1", content: "This is a note for Class 9." },
+                    { title: "Note 2", content: "This is another note for Class 9." }
+                ],
+                "Class 11": [
+                    { title: "Note 1", content: "This is a note for Class 11." },
+                    { title: "Note 2", content: "This is another note for Class 11." }
+                ]
+            };
+
+            const results = {
+                "Class 1": [
+                    { title: "Result 1", content: "This is a result for Class 1." },
+                    { title: "Result 2", content: "This is another result for Class 1." }
+                ],
+                "Class 2": [
+                    { title: "Result 1", content: "This is a result for Class 2." },
+                    { title: "Result 2", content: "This is another result for Class 2." }
+                ],
+                "Class 3": [
+                    { title: "Result 1", content: "This is a result for Class 3." },
+                    { title: "Result 2", content: "This is another result for Class 3." }
+                ],
+                "Class 4": [
+                    { title: "Result 1", content: "This is a result for Class 4." },
+                    { title: "Result 2", content: "This is another result for Class 4." }
+                ],
+                "Class 5": [
+                    { title: "Result 1", content: "This is a result for Class 5." },
+                    { title: "Result 2", content: "This is another result for Class 5." }
+                ],
+                "Class 6": [
+                    { title: "Result 1", content: "This is a result for Class 6." },
+                    { title: "Result 2", content: "This is another result for Class 6." }
+                ],
+                "Class 7": [
+                    { title: "Result 1", content: "This is a result for Class 7." },
+                    { title: "Result 2", content: "This is another result for Class 7." }
+                ],
+                "Class 8": [
+                    { title: "Result 1", content: "This is a result for Class 8." },
+                    { title: "Result 2", content: "This is another result for Class 8." }
+                ],
+                "Class 9": [
+                    { title: "Result 1", content: "This is a result for Class 9." },
+                    { title: "Result 2", content: "This is another result for Class 9." }
+                ],
+                "Class 11": [
+                    { title: "Result 1", content: "This is a result for Class 11." },
+                    { title: "Result 2", content: "This is another result for Class 11." }
+                ]
+            };
+
+            const assignmentContainer = document.getElementById('assignments');
+            assignmentContainer.innerHTML = '';
+
+            assignments[selectedClass].forEach(assignment => {
+                const assignmentElement = document.createElement('div');
+                assignmentElement.className = 'p-4 bg-gray-50 rounded border flex flex-col md:flex-row justify-between items-center cursor-pointer highlight';
+                assignmentElement.innerHTML = `
+                    <div class="mb-4 md:mb-0">
+                        <h3 class="font-semibold">${assignment.title}</h3>
+                        <p class="text-gray-600">${assignment.subject}</p>
+                        <div class="flex items-center text-gray-500 mt-2">
+                            <i class="far fa-calendar-alt mr-2"></i>
+                            <span>Due: ${assignment.due}</span>
+                        </div>
+                    </div>
+                    <span class="px-2 py-1 ${assignment.status === 'submitted' ? 'bg-green-200 text-green-800' : 'bg-yellow-200 text-yellow-800'} rounded">${assignment.status}</span>
+                `;
+                assignmentContainer.appendChild(assignmentElement);
+            });
+
+            const notesContainer = document.getElementById('notes');
+            notesContainer.innerHTML = '';
+
+            notes[selectedClass].forEach(note => {
+                const noteElement = document.createElement('div');
+                noteElement.className = 'p-4 bg-gray-50 rounded border cursor-pointer highlight';
+                noteElement.innerHTML = `
+                    <h3 class="font-semibold">${note.title}</h3>
+                    <p class="text-gray-600">${note.content}</p>
+                `;
+                notesContainer.appendChild(noteElement);
+            });
+
+            const resultsContainer = document.getElementById('results');
+            resultsContainer.innerHTML = '';
+
+            results[selectedClass].forEach(result => {
+                const resultElement = document.createElement('div');
+                resultElement.className = 'p-4 bg-gray-50 rounded border cursor-pointer highlight';
+                resultElement.innerHTML = `
+                    <h3 class="font-semibold">${result.title}</h3>
+                    <p class="text-gray-600">${result.content}</p>
+                `;
+                resultsContainer.appendChild(resultElement);
+            });
+        }
+
+        function showSection(section) {
+            const sections = ['assignments', 'notes', 'results'];
+            sections.forEach(sec => {
+                document.getElementById(sec).classList.add('hidden');
+                document.getElementById(`${sec}Button`).classList.remove('bg-blue-600', 'text-white');
+                document.getElementById(`${sec}Button`).classList.add('bg-white', 'text-gray-700');
+            });
+            document.getElementById(section).classList.remove('hidden');
+            document.getElementById(`${section}Button`).classList.add('bg-blue-600', 'text-white');
+            document.getElementById(`${section}Button`).classList.remove('bg-white', 'text-gray-700');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateClass();
+            showSection('assignments');
+        });
+    </script>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-4">
+        <h1 class="text-2xl font-bold mb-4 text-center md:text-left">Course Dashboard</h1>
+        <div class="flex flex-col md:flex-row justify-between items-center mb-4">
+            <div class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 mb-4 md:mb-0">
+                <button id="assignmentsButton" class="px-4 py-2 rounded" onclick="showSection('assignments')">Assignments</button>
+                <button id="notesButton" class="px-4 py-2 rounded" onclick="showSection('notes')">Notes</button>
+                <button id="resultsButton" class="px-4 py-2 rounded" onclick="showSection('results')">Results</button>
+            </div>
+            <div>
+                <select id="classSelect" class="px-4 py-2 border rounded" onchange="updateClass()">
+                    <option>Class 1</option>
+                    <option>Class 2</option>
+                    <option>Class 3</option>
+                    <option>Class 4</option>
+                    <option>Class 5</option>
+                    <option>Class 6</option>
+                    <option>Class 7</option>
+                    <option>Class 8</option>
+                    <option>Class 9</option>
+                    <option>Class 11</option>
+                </select>
+            </div>
+        </div>
+        <div class="bg-white p-4 rounded shadow">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-4">
+                <h2 id="classTitle" class="text-xl font-semibold mb-4 md:mb-0">Assignments for Class 1</h2>
+                <button class="px-4 py-2 bg-blue-600 text-white rounded">Submit Assignment</button>
+            </div>
+            <div id="assignments" class="space-y-4">
+                <!-- Assignments will be dynamically inserted here -->
+            </div>
+            <div id="notes" class="space-y-4 hidden">
+                <!-- Notes will be dynamically inserted here -->
+            </div>
+            <div id="results" class="space-y-4 hidden">
+                <!-- Results will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
